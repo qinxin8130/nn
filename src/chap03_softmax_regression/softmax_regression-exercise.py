@@ -102,6 +102,7 @@ def compute_loss(pred, labels, num_classes=3):
 
 
 @tf.function
+#实现了神经网络训练中的单步梯度下降优化过程
 def train_one_step(model, optimizer, x_batch, y_batch):
     """
     一步梯度下降优化
