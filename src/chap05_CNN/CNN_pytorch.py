@@ -31,7 +31,7 @@ train_data = torchvision.datasets.MNIST(
     download=DOWNLOAD_MNIST  # 如果需要则下载
 )
 
-# 创建数据加载器，用于批量加载数据
+# 创建了一个数据加载器，用于批量加载训练数据。其核心功能是将数据集按指定批次大小组织，并在每个训练周期 (shuffle=True 时) 随机打乱数据，提高模型训练的泛化能力
 train_loader = Data.DataLoader(
     dataset=train_data,  # 使用的数据集
     batch_size=BATCH_SIZE,  # 每批数据量
@@ -39,7 +39,7 @@ train_loader = Data.DataLoader(
 )
 
 # 加载测试数据集
-test_data = torchvision.datasets.MNIST(root='./mnist/', train=False)  # 加载测试集
+test_data = torchvision.datasets.MNIST(root='./mnist/', train=False) 
 # 预处理测试数据：转换为Variable，调整维度，归一化，只取前500个样本
 test_x = Variable(torch.unsqueeze(test_data.test_data, dim=1), volatile=True).type(torch.FloatTensor)[:500]/255.
 # 获取测试集的标签（前500个），并转换为numpy数组
