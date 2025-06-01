@@ -5,7 +5,8 @@
 
 
 import tensorflow as tf
-from tensorflow.examples.tutorials.mnist import input_data
+from tensorflow.examples.tutorials.mnist 
+import input_data
 mnist = input_data.read_data_sets('MNIST_data', one_hot=True)
 
 learning_rate = 1e-4 #学习率
